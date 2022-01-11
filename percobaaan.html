@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="SPA Example">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Handri Hermawan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/src/img/icon.ico" type="image/gif" sizes="16x16">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/handrihmw/arunikatravelcss/app.css">
+<link rel="stylesheet" href="1.css">
+<style>
+     h3{
+      text-align:center;
+      margin: 50px auto;
+      margin-top: 10px;
+      padding: 10px;
+      font-weight: bold;
+      color: #ffffff;
+      font-family: verdana;
+      background-color: #57CC99;
+      border-radius: 20px;
+    }
+
+  center{
+      font-family: arial;
+      background-color: rgb(255,255,255,0.7);
+      width: 400px;
+      margin: 180px auto;
+      padding: 30px;
+      text-align: right;
+      color: #2D2D2D;
+      border-radius: 40px 10px;
+      box-shadow: 2px 2px 7px #393939;
+    }
+ </style>
+
+
+
+    <title>transaksi</title>
+</head>
+
+<body>
+   
+
+ 
+
+    <th><label align="landscape"  id="cetak" >
+
+
+
+
+<center>
+<div>
+
+
+<h3>TIKET</h3>
+  <table border="0">
+    <tr>
+<tr>    
+    <th>kategori</th>
+    <th><select id="jenis" onchange="total()">
+   <option>bukit bintang</option>
+   <option>pantai sadranan</option>
+   <option>candi borobudur</option>
+   <option>candi prambanan</option>
+            <option>kraton Yogyakarta  </option>
+            <option>Malioboro</option>
+            <option>goa pindul</option>
+    </select></th>
+   </tr>
+    <th>jumlah tiket</th>    
+    <th><input type="number" id="jumlah"  id="harga"  onchange="total()"  value=""></th>
+   </tr>
+   
+   <tr>    
+    <th> harga per tiket</th>
+    <th><input type="text"  id="harga" disabled value=""></th>
+   </tr>
+  
+  
+ <tr>
+<th>status</th>    
+    <th><input type="text" id="status"   onchange="total()" value=""></th>
+   </tr>
+ 
+   <tr>    
+    <th> diskon</th>
+    <th><input type="text"  id="diskon" disabled value=""></th>
+   </tr>
+
+   <tr>    
+    <th> total</th>
+    <th><input type="text"  id="total" disabled value=""></th>
+   </tr>
+
+   <tr>    
+    <th>bayar</th>    
+    <th><input type="number" id="bayar" onchange="total()" value=""></th>
+   </tr>
+   
+   <tr>    
+    <th>Kembali</th>
+    <th><input type="text"  id="total1" disabled value=""></th>
+   </tr>
+   <tr>   
+    <table width="281" height="100px" border="0">
+    <th><label align="landscape"  id="cetak" ></label></th>
+    </table>
+   </tr>         
+   
+  </table>
+
+    
+       
+     <button onclick  ="total()">proses</button>
+    
+
+  
+  <script type="text/javascript">
+  
+  function total() {
+  
+   var jumlah_beli =  parseInt(document.getElementById('jumlah').value);
+   var pembayaran =  parseInt(document.getElementById('bayar').value);
+   var jenis = document.getElementById("jenis").value;
+    var status = document.getElementById("status").value;
+if (status == "member") {
+    diskon = 0.10 * a;
+                }
+  else if (status == "no"){
+("anjay");  }
+
+               
+   if (jenis == "bukit bintang"){
+ b=10000;
+}else if (jenis=="pantai sadranan"){
+b=15000;
+}else if( jenis== "candi borobudur"){
+ b=50000;
+}
+else if( jenis== "candi prambanan"){
+ b=50000;
+}
+else if( jenis=="keraton yogya karta"){
+ b=5000;
+}
+else if( jenis=="malioboro"){
+ b=5000;
+}
+else if( jenis=="goa pindul"){
+ b=100000;
+}
+
+
+
+
+
+
+                
+   if (jenis=="bukit bintang"){
+  a=10000* jumlah_beli
+}else if (jenis==" pantai sadranan"){
+ a=15000* jumlah_beli;
+}else if( jenis=="candi borobudur"){
+  a=50000* jumlah_beli;
+}
+else if( jenis=="prambanan"){
+  a=50000* jumlah_beli;
+}
+else if( jenis== "keraton yogyakarta"){
+  a=5000* jumlah_beli;
+}
+else if( jenis== "malioboro"){
+  a=5000* jumlah_beli;
+}
+else if( jenis=="goa pindul"){
+  a=100000* jumlah_beli;
+}
+
+      document.getElementById('diskon').value = diskon;
+   var jumlah_harga = a-diskon ;
+    document.getElementById('total').value = jumlah_harga;
+
+
+ if (pembayaran <= jumlah_harga){
+alert("uang anda kurang");
+  
+ }
+
+
+   var kembali = pembayaran - jumlah_harga;
+    document.getElementById('total1').value = kembali;
+  
+      document.getElementById('harga').value = b;
+  }
+                   
+  
+
+
+  
+  </script>   
+ </div>
+
+ 
+</body>
+</html>
+ 
